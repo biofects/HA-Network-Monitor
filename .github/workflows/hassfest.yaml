@@ -16,7 +16,7 @@ jobs:
       - name: Check file encodings
         run: |
           echo "Checking Python file encodings..."
-          find . -type f -name "*.py" -exec file --mime {} + | grep -v 'charset=utf-8' || echo "All files are UTF-8 ✅"
+          find . -type f -name "*.py" -exec file --mime {} + | grep -v 'charset=utf-8' || echo "✅ All files are UTF-8"
 
       # Debug: Print files that fail UTF-8 decoding
       - name: Find files that fail UTF-8 decoding
@@ -28,5 +28,17 @@ jobs:
             fi
           done
 
+      # Debug: Show problematic file content in hex format
+      - name: Show non-UTF-8 file content in hex
+        run: |
+          echo "Showing hex content of non-UTF-8 files..."
+          find . -type f -name "*.py" | while read file; do
+            if ! python3 -c "open('$file', encoding='utf-8').read()"; then
+              echo "🔍 File: $file"
+              xxd "$file" | head -n 20
+            fi
+          done
+
       # Run hassfest validation
       - uses: home-assistant/actions/hassfest@master
+
