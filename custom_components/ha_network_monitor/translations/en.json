@@ -30,9 +30,6 @@
         "state": {
           "idle": "Idle",
           "threat_detected": "Threat detected"
-        },
-        "attributes": {
-          "suspicious_ips": "Suspicious IPs"
         }
       }
     }

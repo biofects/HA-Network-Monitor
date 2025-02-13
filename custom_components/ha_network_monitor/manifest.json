@@ -2,14 +2,14 @@
   "domain": "ha_network_monitor",
   "name": "HA Network Monitor",
   "config_flow": true,
-  "version": "1.0.0",
-  "documentation": "https://github.com/biofects/HA-Network_Monitor",
-  "dependencies": [],
   "codeowners": ["@biofects"],
+  "dependencies": [],
+  "documentation": "https://github.com/biofects/HA-Network_Monitor",
+  "iot_class": "local_polling",
   "requirements": [
     "scapy",
     "aiohttp",
     "ipaddress"
   ],
-  "iot_class": "local_polling"
+  "version": "1.0.0"
 }
