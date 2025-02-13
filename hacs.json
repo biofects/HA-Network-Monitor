@@ -1,0 +1,9 @@
+{
+  "name": "Network Monitor",
+  "description": "Monitors outbound traffic for suspicious connections.",
+  "domain": "network_monitor",
+  "country": ["US"],
+  "homeassistant": "2023.5.0",
+  "render_readme": true
+}
+

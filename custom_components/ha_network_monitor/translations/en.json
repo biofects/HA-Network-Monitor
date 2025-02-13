@@ -1,0 +1,41 @@
+{
+  "title": "HA Network Monitor",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure HA Network Monitor",
+        "description": "Monitor outbound network traffic for suspicious activity.",
+        "data": {
+          "enable_notifications": "Enable Threat Notifications",
+          "scan_interval": "Scan Interval (seconds)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options for HA Network Monitor",
+        "data": {
+          "enable_notifications": "Enable Threat Notifications",
+          "scan_interval": "Scan Interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ha_network_threat_monitor": {
+        "name": "Network Threat Monitor",
+        "state": {
+          "idle": "Idle",
+          "threat_detected": "Threat detected"
+        },
+        "attributes": {
+          "suspicious_ips": "Suspicious IPs"
+        }
+      }
+    }
+  }
+}
+
