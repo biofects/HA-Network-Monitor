@@ -11,4 +11,22 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - uses: "actions/checkout@v2"
+
+      # Debug: Find files that are not UTF-8
+      - name: Check file encodings
+        run: |
+          echo "Checking Python file encodings..."
+          find . -type f -name "*.py" -exec file --mime {} + | grep -v 'charset=utf-8' || echo "All files are UTF-8 ✅"
+
+      # Debug: Print files that fail UTF-8 decoding
+      - name: Find files that fail UTF-8 decoding
+        run: |
+          echo "Checking if any Python files fail UTF-8 decoding..."
+          find . -type f -name "*.py" | while read file; do
+            if ! python3 -c "open('$file', encoding='utf-8').read()"; then
+              echo "❌ Failed to decode: $file"
+            fi
+          done
+
+      # Run hassfest validation
       - uses: home-assistant/actions/hassfest@master
