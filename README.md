@@ -1,4 +1,5 @@
-# 🌐 UniFi Network Monitor for Home Assistant
+# 🌐 UniFi Network Monitor for Home Assistant (P.O.C) 
+Work in progress, i am Not responsible for issues caused by using this plugin.
 
 ## 🔍 About
 This is essentially a security tool that can alert you if any of your home devices are trying to communicate with known malicious servers, which could indicate a compromised device or malware infection.
