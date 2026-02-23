@@ -4,7 +4,7 @@
   "codeowners": ["@biofects"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/biofects/HA-Network_Monitor",
+  "documentation": "https://github.com/biofects/HA-Network-Monitor",
   "iot_class": "local_polling",
   "requirements": [
     "scapy",

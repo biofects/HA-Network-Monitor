@@ -1,4 +1,4 @@
-# 🌐 UniFi Network Monitor for Home Assistant (P.O.C) 
+# 🌐 HA Network Monitor for Home Assistant (P.O.C) 
 Work in progress, i am Not responsible for issues caused by using this plugin.
 
 ## 🔍 About
